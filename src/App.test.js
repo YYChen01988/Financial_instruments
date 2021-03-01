@@ -15,7 +15,13 @@ const testData = [
     "ticker": "Beta",
     "price": -1849.83,
     "assetClass": "Macro"
-  }];
+  },
+  {
+    "ticker": "Zeta",
+    "price": 3274.02,
+    "assetClass": "Credit"
+  }, 
+];
 
 const setRowData = (wrapper, rowData) => {
   return new Promise(function (resolve, reject) {
@@ -87,11 +93,20 @@ describe('Grid Actions Panel', () => {
     });
   });
 
-  it('CSS styling in cells as expected', () => {
+  it('Equities cell is blue', () => {
     const cells = wrapper.render().find('.ag-cell-value');
-    // assert Ticker
     expect(cells[0].parent.attribs.style.includes('background: '+color.blue)).toBeTruthy()
-    // expect(cells[3].children[0].parent.attribs.style).toBe(3)
+  });
+
+  it('Macro cell is white', () => {
+    const cells = wrapper.render().find('.ag-cell-value');
+    expect(cells[3].parent.attribs.style.includes('background: '+color.white)).toBeTruthy()
+
+  });
+
+  it('Credit cell is green', () => {
+    const cells = wrapper.render().find('.ag-cell-value');
+    expect(cells[5].parent.attribs.style.includes('background: '+color.green)).toBeTruthy()
 
   });
 

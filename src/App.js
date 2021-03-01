@@ -29,6 +29,8 @@ class App extends React.Component {
       defaultColDef: {
         filter: true,
         sortable: true,
+        resizable: true,
+
       },
       rowData: null,
 
@@ -62,12 +64,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <header>For multiple columns sort, please hold shift and click headers</header>
-        <div
+        <header style={{ margin:20 }}>For multiple columns sort, please hold shift and click headers</header>
+        <div 
           className="ag-theme-balham"
           style={{
             width: 800,
             height: 600,
+            margin:20,
           }}
         >
           <AgGridReact getRowStyle={this.getRowStyle}
