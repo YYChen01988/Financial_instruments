@@ -29,8 +29,6 @@ class App extends React.Component {
       defaultColDef: {
         filter: true,
         sortable: true,
-        resizable: true,
-
       },
       rowData: null,
 
