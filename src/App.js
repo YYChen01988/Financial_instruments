@@ -51,9 +51,7 @@ class App extends React.Component {
   onGridReady = params => {
     this.gridApi = params.api;
     this.columnApi = params.columnApi;
-
     params.api.sizeColumnsToFit();
-
     // API CALL GOES HERE
     this.setState({ rowData })
 
@@ -77,8 +75,6 @@ class App extends React.Component {
             defaultColDef={this.state.defaultColDef}
             onGridReady={this.onGridReady}
           />
-
-          {/* <Table/> */}
         </div>
       </div>
     )
